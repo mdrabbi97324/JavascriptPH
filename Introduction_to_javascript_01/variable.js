@@ -23,3 +23,15 @@ console.log(result2);
 var kaiso = false;
 var serious = true;
 var isSingle = true;
+
+
+//Pre increment and Post increment
+
+var x = 5;
+console.log(x++);
+console.log(x++);
+
+// Post increment 
+
+var ami = 20
+console.log(++ami);
