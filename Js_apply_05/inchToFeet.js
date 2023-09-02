@@ -33,8 +33,9 @@ console.log();
 
 function convertInchsToFeets(heights) {
     
-    return 
+    return heights;
 }
+
 
 // function height(num1, num2, num3) {
 //     let feet = num1 / 12;
