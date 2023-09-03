@@ -48,22 +48,55 @@
 
 
 
-    function inchesToFeet(inchesArray) {
-        //Creating a new array to store the values in feet
-        var feetArray = [];
-        // Iterate through the input array
-        for (var i = 0; i<inchesArray.length; i++) {
-            //Convert inches to feet (1 foot = 12 inches)
-            var feetValue = inchesArray[i] / 12;
-
-            //Push the result into the feetArray
-            feetArray.push(feetValue);
+    
+    
+/*     function isLeapYear(year) {
+        const remainder = year % 4;
+        if (remainder === 0) {
+            return true;
         }
 
-        return feetArray;
+        else {
+            return false;
+        }
     }
 
-    var inchesValues = [150, 123, 33]; // An array with values in inches
-    var feetValues = inchesToFeet(inchesValues);
+let myYearIsLeapYear = isLeapYear(2002);
+console.log(myYearIsLeapYear); */
 
-    console.log(feetValues);     
+/* function checkLeapYear(year) {
+
+    //three conditions to find out the leap year
+    if ((0 == year % 4) && (0 != year % 100) || (0 == year % 400)) {
+        console.log(year + ' is a leap year');
+    } else {
+        console.log(year + ' is not a leap year');
+    }
+}
+
+// take input
+// const year = prompt(2020);
+
+checkLeapYear(2024); */
+
+var inchesValues = [150, 123, 33];
+
+function inchesToFeets(inchesArray) {
+    var feetArray = [];
+    for (var i = 0; i<inchesArray.length; i++) {
+        var feetValue = inchToFeet(inchesArray[i])  ;
+        feetArray.push(feetValue);
+    }
+
+    return feetArray;
+}
+
+var feetValues = inchesToFeets(inchesValues);
+
+console.log(feetValues); 
+
+function inchToFeet(inch) {
+    return  inch / 12 ;
+}
+
+console.log(inchToFeet(12));

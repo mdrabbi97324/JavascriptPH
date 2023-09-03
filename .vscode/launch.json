@@ -11,7 +11,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}\\Js_apply_05\\is_even.js"
+            "program": "${file}
         }
     ]
 }
