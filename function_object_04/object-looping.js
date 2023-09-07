@@ -10,9 +10,9 @@ var shoppingCart = {
 console.log(shoppingCart);
 var properties = Object.keys(shoppingCart);
 var propertyValues = Object.values(shoppingCart);
-// console.log(properties, propertyValues);
+console.log(properties, propertyValues);
 
-for(var i=0; i<properties.length; i++) {
+/* for(var i=0; i<properties.length; i++) {
     console.log(properties[i], propertyValues[i]);
 }
 
@@ -21,4 +21,4 @@ function movie(){
     return "Poran";
     return "Hawa";
    }
-   console.log(movie());
+   console.log(movie()); */
