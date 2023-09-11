@@ -1,6 +1,6 @@
 function cubeNumber(number) {
     if (typeof number !== 'number') {
-        return "Please give a number"
+        return "Please give a number";
     }
 
     return Math.pow(number, 3);
@@ -66,6 +66,8 @@ else if ( Array.isArray(changeArray) && !changeArray.length ){
 }
     return false;
 }
+
+
 
 
 
