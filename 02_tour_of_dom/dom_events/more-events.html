@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More Events</title>
+</head>
+<body>
+    <input type="text" id="text-field">
+    <br>
+    <br>
+    <button id="btn-more">EVENT</button>
+    <br>
+    <br>
+    <!-- Github Delete Function create -->
+    <h1 id="hide-heading">Here some text</h1>
+    <input type="text" id="input-text">
+    <button id="btn-hide">Hide Text</button>
+    <button id="btn-delete" disabled>Delete</button>
+    <script>
+        // document.getElementById('text-field').addEventListener('focus',function(event){
+        //     event.target.style.backgroundColor = 'pink';
+
+        // })
+
+        // document.getElementById('text-field').addEventListener('blur', function(event){
+        //     event.target.style.backgroundColor = '';
+        // })
+
+        document.getElementById('input-text').addEventListener('keyup', function(event){
+            const text = event.target.value;
+            const deleteButton = document.getElementById('btn-delete');
+            if(text === 'delete') {
+                deleteButton.removeAttribute('disabled')
+            }
+            else{
+                deleteButton.setAttribute('disabled', true)
+            }
+
+            deleteButton.addEventListener('click',function(){
+                document.getElementById('hide-heading').style.display ='none';
+            })
+            
+        })
+        
+
+        // document.getElementById('btn-hide').addEventListener('click', function(){
+        //     document.getElementById('hide-heading').style.display = 'none';
+        // })
+
+        // document.getElementById('text-field').addEventListener('keypress', function(event){
+        //     console.log(event.target.value);
+        // })
+    </script>
+</body>
+</html>

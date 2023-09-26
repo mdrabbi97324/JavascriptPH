@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tour of Dom</title>
+    <link rel="stylesheet" href="styles/style.css" />
+    <style>
+      li {
+        color: green;
+      }
+
+      #fruits-title {
+        color: black;
+        background-color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to my DOM</h1>
+    </header>
+    <main id="main-container">
+      <section>
+        <h1>My awesome dom</h1>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam nisi
+          ex doloribus iusto. Eum culpa, temporibus a dolorem deserunt at?
+        </p>
+        <ul>
+          <li>Jalali set</li>
+          <li>shafayat</li>
+          <li>bonobash</li>
+        </ul>
+      </section>
+
+      <section class="fruits-container">
+        <h1 id="fruits-title" class="hello example title">Fruits I Like</h1>
+        <p class="example">
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui, sunt?
+        </p>
+        <ul>
+          <li>Apple</li>
+          <li>Banana</li>
+          <li>Waterf Melon</li>
+        </ul>
+      </section>
+      <section id="places-container">
+        <h1>Where I can go ?</h1>
+        <p class="example">I need to refreshment that's why I need to go somewhere.</p>
+        <ul id="place-list">
+          <li class="important-place example">Dhaka</li>
+          <li class="important-place example">Gazipur</li>
+          <li class="other-place example">Savar</li>
+        </ul>
+      </section>
+    </main>
+    <script src="02_tour_of_dom/dom_.js"></script>
+    <script>
+      /* const student = {
+        id: 11,
+        name: "ABUL",
+        study: function (time) {
+          console.log(time, "study kortese");
+        },
+      };
+
+      const liCollection = document.getElementsByTagName("li");
+      for (const li of liCollection) {
+        console.log(li.innerText);
+      }
+      const headingCollection = document.getElementsByTagName("h1");
+      for (const heading of headingCollection) {
+        console.log(heading.innerText);
+      } */
+
+      /*  const heading = document.getElementById('fruits-title');
+      console.log(heading.innerText='Change fruit title');
+      const listCollection = document.getElementsByClassName('important-place');
+      for(const list of listCollection) {
+        console.log(list.innerText);
+      }
+      console.log(document.getElementsByClassName('other-place'));
+    */
+
+    // example of querySelector() ================
+
+      /* const x = document.querySelector("p");
+      console.log(x.innerText);
+      const getTheFirstElement = document.querySelector('.example');
+      // console.log(getTheFirstElement);
+      const firstParagraphElement = document.querySelector('p.example');
+      console.log(firstParagraphElement); */
+
+      // example of querySelectorAll() ================
+
+      /* const example = document.querySelectorAll('.example');
+      console.log(example);
+      const output = document.getElementById('fruits-title');
+      console.log(output); */
+    </script>
+  </body>
+</html>
