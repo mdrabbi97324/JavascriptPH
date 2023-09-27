@@ -1,15 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    
+    <style>
+      #example-div {
+        display: none;
+      }
+
+      .my-class {
+        background-color: gold;
+        padding: 1rem;
+        font-size: 20px;
+        font-weight: 800;
+        color: black;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Explore Document Object Model</h1>
+    <h2>This is an ideal word</h2>
+    <div id="container">
+      <h3 id="title">Some items name here</h3>
+      <ul id="item-container">
+        <li class="item">Tissue</li>
+        <li class="item">Mug</li>
+        <li class="item">Pc</li>
+        <li class="item">laptop</li>
+        <li class="item">Mobile</li>
+      </ul>
+    </div>
+    <div id="example-div">This is <b>bold</b> Text</div>
+    <div id="example-div2">This is another div</div>
     <script>
-        
-        console.dir(type of window.document)
+      // console.dir(document);
+      const element = document.getElementById("example-div");
+      //   console.log(element.textContent);
+      const element1 = document.getElementById("example-div2");
+      //   console.log(element1.innerText);
+
+      const title = document.getElementById("title");
+      title.style.color = "red";
+      title.innerText = "This text changed using by js after set a color";
+      const items = document.getElementsByClassName("item");
+      // console.log(items);
+
+      // for(item of items){
+      //     console.log(item.innerText);
+      // }
+
+      const itemsContainer = document.getElementById("item-container");
+      // console.log(itemsContainer.innerHTML)
+
+      const itemQuery = document.querySelector("#item-container");
+      // console.log(itemQuery.innerHTML)
+
+      const itemsQuery = document.querySelectorAll(".item");
+      // console.log(itemQuery)
+      // for(i of itemsQuery){
+      //     console.log(i)
+      // }
+
+      const child = document.querySelector(".item");
+      // console.log(child.parentNode.parentNode.parentNode.parentNode.parentNode)
+      // console.log(child.parentElement.parentElement.parentElement.parentElement)
+
+      const li = document.createElement("li");
+      li.innerText = "Headphone";
+      li.classList.add("item");
+      itemQuery.appendChild(li);
+
+      console.log(itemQuery);
+
+      itemQuery.setAttribute("title", "tumi-ki-koro");
+      element1.setAttribute("class", "my-class");
+
+      element1.removeAttribute('class');
     </script>
-</body>
+  </body>
 </html>
