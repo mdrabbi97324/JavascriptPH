@@ -57,3 +57,12 @@ obj.name = 'hello'
 delete obj.name ;
 console.log(obj);
 
+const obj2 = { foo: 1 };
+obj2.bar = 2;
+
+console.log(obj2);
+
+let a = 12, b = 3;
+[a, b] = [b, a];
+
+console.log(a, b);
