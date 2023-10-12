@@ -1,62 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Dashboard</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
 <body>
+  <button onclick="loadData()">Load Data</button>
+  <button onclick="loadUsers()">Load Users</button>
+  <button onclick="loadUsers2()">Load Users 2</button>
 
-  <header>
-    <h1>Dashboard</h1>
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Analytics</a></li>
-      <li><a href="#">Ecommerce</a></li>
-    </ul>
-  </header>
-
-  <div class="main-content">
-
-    <aside class="sidebar">
-      <ul>
-        <li><a href="#">Apps</a></li>
-        <li><a href="#">Items Sales</a></li>
-        <li><a href="#">New Orders</a></li>
-        <li><a href="#">New Visitor</a></li>
-        <li><a href="#">Email</a></li>
-        <li><a href="#">Chat</a></li>
-        <li><a href="#">Todo</a></li>
-        <li><a href="#">Calendar</a></li>
-        <li><a href="#">Invoice</a></li>
-        <li><a href="#">File Manager</a></li>
-      </ul>
-    </aside>
-
-    <main class="cards">
-
-      <div class="card">
-        <h2>Sales Overview</h2>
-        <p>$5,337</p>
-      </div>
-
-      <div class="card">
-        <h2>Total Products</h2>
-        <p>4033</p>
-      </div>
-
-      <div class="card">
-        <h2>Page View</h2>
-        <p>72k</p>
-      </div>
-
-      <div class="card">
-        <h2>Unique Users</h2>
-        <p>4033k</p>
-      </div>
-
-    </main>
-
+  <div>
+    <ul style="font-size: large; font-weight: bold;" id="users">Here is name of the Users</ul>
   </div>
 
+
+
+
+  <!-- <script src="/milestone_06/api-json/json_placeholder.js"></script> -->
+  <script src="milestone_06/api-json/fetch.js"></script>
 </body>
 </html>
