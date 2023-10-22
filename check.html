@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Checkbox Example</title>
+</head>
+<body>
+    <label for="parentCheckbox">Parent Checkbox</label>
+    <input type="checkbox" id="parentCheckbox">
+    <br>
+    <label for="childCheckbox1">Child Checkbox 1</label>
+    <input type="checkbox" id="childCheckbox1" class="child">
+    <br>
+    <label for="childCheckbox2">Child Checkbox 2</label>
+    <input type="checkbox" id="childCheckbox2" class="child">
+    
+    <script>
+        // Get references to the parent and child checkboxes
+        const parentCheckbox = document.getElementById("parentCheckbox");
+        const childCheckboxes = document.querySelectorAll(".child");
+
+        // Add a click event listener to the parent checkbox
+        parentCheckbox.addEventListener("click", function () {
+            // Check or uncheck child checkboxes based on the parent's state
+            const isChecked = parentCheckbox.checked;
+            childCheckboxes.forEach(function (childCheckbox) {
+                childCheckbox.checked = isChecked;
+            });
+        });
+
+        // Add click event listeners to child checkboxes
+        childCheckboxes.forEach(function (childCheckbox) {
+            childCheckbox.addEventListener("click", function () {
+                // If any child checkbox is clicked, uncheck the parent checkbox
+                parentCheckbox.checked = false;
+            });
+        });
+    </script>
+</body>
+</html>
