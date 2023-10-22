@@ -35,14 +35,13 @@ const handleCategory = async () => {
 };
 
 const handleLoadNews = async (categoryId) => {
-  const cardContainer = document.getElementById('card-container');
   const res = await fetch(
     `https://openapi.programming-hero.com/api/news/category/${categoryId}`
-  );
-  const dataC = await res.json();
-    cardContainer.innerHTML=""
+    );
+    const dataC = await res.json();
+    const cardContainer = document.getElementById('card-container');
+    cardContainer.innerHTML=""  ;
   dataC.data.forEach(news => {
-    console.log(news)
     const div = document.createElement('div');
     div.innerHTML = `
     <div class="card w-96 bg-base-100 shadow-xl">
@@ -53,11 +52,11 @@ const handleLoadNews = async (categoryId) => {
                 </figure>
                 <div class="card-body">
                   <h2 class="card-title">
-                  ${news.title.slice(0,30)}
+                  ${news.title.slice(0,30)}...
                     <div class="badge badge-secondary p-5">${news.rating.badge}</div>
                   </h2>
                   <p>
-                    ${news.details}
+                    ${news.details.slice(0,30)}...
                   </p>
                   <h3>Total Views : ${news.total_view ? news.total_view : 'No view'}</h3>
                   <div class="card-footer flex justify-between mt-8">
@@ -70,7 +69,7 @@ const handleLoadNews = async (categoryId) => {
                         </div>
                       </div>
                       <div>
-                        <h6>${news.author.name}</h6>
+                        <h6>${news.author.name ? news.author.name : 'Unavailable'}</h6>
                         <small>${news.author.published_date ? news.author.published_date : 'Date unavailable'}</small>
                       </div>
                     </div>
@@ -92,24 +91,27 @@ const handleLoadNews = async (categoryId) => {
 };
 
 const handleModal = async newsId => {
-  console.log(newsId);
   const response = await fetch(`https://openapi.programming-hero.com/api/news/${newsId}`)
   const newsData = await response.json();
-  console.log(newsData.data[0]);
   const modalContainer = document.getElementById('modal-container');
   const div = document.createElement('div');
-  div.innerHTML =   `
-  <!-- Open the modal using ID.showModal() method -->
-<button class="btn" onclick="my_modal_2.showModal()">open modal</button>
-<dialog id="my_modal_2" class="modal">
+    div.innerHTML =   `
+  <dialog id="my_modal_2" class="modal">
   <div class="modal-box">
-    <h3 class="font-bold text-lg">Hello!</h3>
-    <p class="py-4">Press ESC key or click outside to close</p>
-  </div>
-  <form method="dialog" class="modal-backdrop">
-    <button>close</button>
-  </form>
-</dialog>`
+  <p class="py-4">Press ESC key or click outside to close</p>
+  <h2 class="font-bold text-lg">ID : ${newsData.data[0]._id}</h2>
+      <h3 class="font-semibold text-lg"><span class="font-bold underline">Title :</span> ${newsData.data[0].title}</h3>
+      <h4 class="font-medium text-lg"><span class="font-bold underline" >Description :</span> ${newsData.data[0].details}</h4>
+    </div>
+    <form method="dialog" class="modal-backdrop">
+      <button>close</button>
+    </form>
+  </dialog>`
+  modalContainer.appendChild(div);
+  const modal = document.getElementById('my_modal_2');
+  modal.showModal()
+
+
 }
 
 handleCategory();
